@@ -1,0 +1,55 @@
+name: Publish Release Image
+
+on:
+  workflow_call:
+    secrets:
+      GHCR_USERNAME:
+        required: true
+      GHCR_TOKEN:
+        required: true
+jobs:
+  docker_build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Tag
+      id: check-tag
+      run: |-
+        if [[ ${{ github.ref_name }} =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          echo ::set-output name=match::true
+        fi
+    - name: Report SemVer Check
+      if: steps.check-tag.outputs.match != 'true'
+      run: echo "Release version must follow semantic naming (e.g. 1.0.2)"; exit 1
+    - name: Check Source Branch
+      if: github.event.release.target_commitish != 'master' && github.event.release.target_commitish != 'main'
+      run: echo "Releases must be built from master/main branch"; exit 1
+    - name: Check out GitHub Repo
+      with:
+        ref: "${{ github.event.pull_request.head.sha }}"
+      uses: actions/checkout@v2
+    - name: Build and Push to Packages
+      env:
+        PR: "${{ github.event.pull_request.number }}"
+        SHA: "${{ github.event.pull_request.head.sha }}"
+        VER: "${{ github.event.release.tag_name }}"
+        DOCKER_ACTOR: "${{ secrets.GHCR_USERNAME }}"
+        DOCKER_TOKEN: "${{ secrets.GHCR_TOKEN }}"
+      shell: bash
+      run: |
+        export MY_ORG=$(echo "${GITHUB_REPOSITORY}" | awk -F / '{print tolower($1)}')
+        export MY_APP=$(echo "${GITHUB_REPOSITORY}" | awk -F / '{print $2}')
+        export DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+        export BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+        export COMMIT=$(echo "$SHA" | cut -c -7)
+        echo "Ref name is: $GITHUB_REF_NAME"
+        echo "$DOCKER_TOKEN" | docker login ghcr.io -u "$DOCKER_ACTOR" --password-stdin
+        docker build --build-arg BUILD_DATE="$DATE" \
+                    --build-arg COMMIT="$COMMIT" \
+                    --build-arg BRANCH="$GITHUB_HEAD_REF" \
+                    --build-arg PULL_REQUEST="$PR" \
+                    --build-arg VERSION="$VER"  \
+                    --label us.kbase.vcs-pull-req="$PR" \
+                    -t ghcr.io/"$MY_ORG"/"$MY_APP":"$VER" \
+                    -t ghcr.io/"$MY_ORG"/"$MY_APP":"latest" .
+        docker push ghcr.io/"$MY_ORG"/"$MY_APP":"$VER"
+        docker push ghcr.io/"$MY_ORG"/"$MY_APP":"latest"        
