@@ -21,7 +21,6 @@ jobs:
           format: 'table'
           output: 'trivy-results.tbl'
           timeout: '20m0s'
-          severity: 'CRITICAL,HIGH'
 
       - name: Check for log4j CVEs
         run: |
