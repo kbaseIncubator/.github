@@ -31,8 +31,9 @@ jobs:
           	    echo "Found log4j error: $cve"
           	    exit 2
           	fi
-          echo "Did not find core log4j errors, yay!"
           done
+          # If above doesn't find errors, return pass message:
+          echo "Did not find core log4j errors, yay!"
 
       - name: Run Trivy vulnerability scanner - Latest
         uses: aquasecurity/trivy-action@master
