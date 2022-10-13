@@ -58,6 +58,13 @@ The following steps will allow a repo owner/admin to set up the needed protectio
    - This can be safely disabled by an admin during troublehooting, but should remain enabled during normal use.
 3. Click create.
 
+#### Require status checks
+
+Once a successful Pull Request has been created, and the `pr_build.yml` workflow has completed, require the following specific status checks:
+
+- On `develop` branch rule: `build-develop-open`
+- On `main` branch rule: `build-main-merge`
+
 ##### Branch Rules Demo
 
 <!-- This code creates a simple dropdown -->
