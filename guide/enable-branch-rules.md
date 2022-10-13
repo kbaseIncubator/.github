@@ -65,6 +65,8 @@ Once a successful Pull Request has been created, and the `pr_build.yml` workflow
 - On `develop` branch rule: `build-develop-open`
 - On `main` branch rule: `build-main-merge`
 
+<img width="1298" alt="RequiredStatusChcecks" src="https://user-images.githubusercontent.com/6155956/195523313-350f9a34-5e64-440f-8dcc-ed4e1186f315.png">
+
 ##### Branch Rules Demo
 
 <!-- This code creates a simple dropdown -->
