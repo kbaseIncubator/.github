@@ -29,10 +29,11 @@ To enable the KBase build scripts on an existing [github.com/kbase](https://gith
 2. If there are any existing Actions (workflows) enabled, click on the `New workflow` button above the list of active workflows.
    - If the repo does not have any active Actions (workflows), then a `Get started with GitHub Actions` page will appear instead.
 3. Navigate to the `By KBase Software` section.
-4. Click `Configure` under the `Build & Tag Images on PR` Action.
+4. Click `Configure` under the `Pull Request Build, Tag, & Push` Action.
 5. Click `Start commit` to add the file `pr_build.yml` to the repo.
-6. Repeat steps 1-6 to add the `Build Production Release Image` (`prod_release.yml`) to the repo.
-7. Use pull requests to propagate the workflow files to all active branches including: 
+6. Repeat steps 1-5 to add the `Build Production Release Image` (`prod_release.yml`) Action to the repo.
+7. Optionally, repeat steps 1-5 to add the `Manual Build & Push` (`manual-build.yml`) Action to the repo.
+8. Use pull requests to propagate the workflow files to all active branches including: 
    - `main`/`master` 
    - `develop`
    - `inbox`
