@@ -38,5 +38,5 @@ Before using these actions, please:
 2. Enable the required [status checks](https://github.com/kbase/.github/blob/DEVOPS-803-DocUpdates/guide/enable-branch-rules.md#require-status-checks).
 
 
-
+---
 **|| Previous: [Home](README.md) || Next: [Existing Repository](existing-repository.md) ||**

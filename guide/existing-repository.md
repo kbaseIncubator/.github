@@ -60,5 +60,5 @@ Before using these actions, please:
 2. Enable the required [branch rules](enable-branch-rules.md) and [status checks](https://github.com/kbase/.github/blob/DEVOPS-803-DocUpdates/guide/enable-branch-rules.md#require-status-checks).
 
 
-
+---
 **|| Previous: [New Repository](new-repository.md) || [Home](README.md) || Next: [Enable Branch Rules](enable-branch-rules.md) ||**

@@ -216,5 +216,6 @@ After the pull request is merged, the `Build & Tag Image on PR` workflow will tr
 | :----------------------------------------------------------- |
 | Once all non-production environments are migrated to Rancher 2, developers will have the option to automatically deploy the `latest` image to a development cluster when a pull request is merged! |
 
+
 ---
 **|| Previous: [Enable Branch Rules](enable-branch-rules.md) || [Home](README.md) || Next: [Release Workflow](release-workflow.md) ||**

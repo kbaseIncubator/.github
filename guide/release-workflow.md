@@ -111,6 +111,6 @@ This demo shows a pull request from a feature branch to `develop`, but the proce
 
 </details>
 
----
 
+---
 **|| Previous: [Development Workflow](development-workflow.md) || [Home](README.md) ||**

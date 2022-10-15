@@ -84,5 +84,5 @@ Once a successful Pull Request has been created, and the `pr_build.yml` workflow
 Before using these branch rules, please review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md)
 
 
-
+---
 **|| Previous: [Existing Repository](existing-repository.md) || [Home](README.md) || Next: [Development Workflow](development-workflow.md) ||**
