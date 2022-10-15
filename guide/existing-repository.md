@@ -53,7 +53,11 @@ To enable the KBase build scripts on an existing [github.com/kbase](https://gith
 
 ### Next Steps
 
-Before using these actions, please review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md)
+
+Before using these actions, please:
+
+1. Review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md) sections.
+2. Enable the required [status checks](https://github.com/kbase/.github/blob/DEVOPS-803-DocUpdates/guide/enable-branch-rules.md#require-status-checks).
 
 
 
