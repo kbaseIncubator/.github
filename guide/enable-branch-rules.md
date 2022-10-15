@@ -63,7 +63,7 @@ The following steps will allow a repo owner/admin to set up the needed protectio
 Once a successful Pull Request has been created, and the `pr_build.yml` workflow has completed, require the following specific status checks:
 
 - On `develop` branch rule: `build-develop-open`
-- On `main` branch rule: `build-main-merge`
+- On `main` branch rule: `build-main-open`
 
 <img width="1298" alt="RequiredStatusChcecks" src="https://user-images.githubusercontent.com/6155956/195523313-350f9a34-5e64-440f-8dcc-ed4e1186f315.png">
 
