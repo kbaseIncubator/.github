@@ -2,8 +2,12 @@
 
 ## KBase Build & Release Guide
 
-This guide describes how to set up and use the standard KBase build and release scripts.
-These scripts allow KBase developers to:
+This guide describes how to set up and use the standard KBase build and release workflows.
+
+
+<img width="937" alt="KBaseActions" src="https://user-images.githubusercontent.com/6155956/195962864-b560614d-a908-406a-bf48-64b8135d7016.png">
+
+The reusable workflows discussed in this guide allow KBase developers to:
 
 - Automatically build test images when a pull request is created
 - Tag images as `latest` once a pull request is merged
