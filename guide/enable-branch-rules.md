@@ -23,7 +23,7 @@ The KBase Actions (workflows) are built under the assumption that:
 
 ### Preliminary Steps
 
-1. Confirm that  `pr_build.yml` and `prod_release.yml` exist in the `.github/workflows/` directories of all active branches.
+1. Confirm that  `pr_build.yml` and `release-main.yml` exist in the `.github/workflows/` directories of all active branches.
 2. See [New Repository](new-repository.md) and [Existing Repository](existing-repository.md) for instructions on how to enable these workflows.
 
 ### Enable Branch Rules

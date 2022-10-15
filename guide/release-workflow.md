@@ -24,7 +24,7 @@ The KBase Release workflow requires the following:
 
 1. The `develop` branch must contain all code that is to be released.
    - See the [Development Workflow](development-workflow.md) for more
-2. The `pr_build.yml` and `prod_release.yml` workflows described in the [New Repository](new-repository.md) and [Existing Repository](existing-repository.md) sections must be present in the repo.
+2. The `pr_build.yml` and `release-main.yml` workflows described in the [New Repository](new-repository.md) and [Existing Repository](existing-repository.md) sections must be present in the repo.
 3. The branch rules discussed in [Enable Branch Rules](enable-branch-rules.md) must be enabled.
 
 
