@@ -210,7 +210,7 @@ After approving and merging the pull request, please delete the source branch (u
 
 ##### Automatic Image Tagging
 
-After the pull request is merged, the `Build & Tag Image on PR` workflow will trigger the `tag_on_merge` job, which automatically tags the image created above as `latest`. This image is now ready to be deployed to `CI` or other non-production environments.
+After the pull request is merged, the `Pull Request Build, Tag, & Push ` workflow will trigger the `tag_on_merge` job, which automatically tags the image created above as `latest`. This image is now ready to be deployed to `CI` or other non-production environments.
 
 | 🎬 Coming Soon - Continuous Delivery                          |
 | :----------------------------------------------------------- |

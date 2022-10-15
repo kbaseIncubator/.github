@@ -57,7 +57,7 @@ When a pull request to `main` or `master`  is created or updated, the `pr_build.
 <details>
 <summary>Expand For Instructions</summary>
 
-1. Allow the `pull_request` job in the `Build & Tag Image on PR` workflow to complete.
+1. Allow the `pull_request` job in the `Pull Request Build, Tag, & Push ` workflow to complete.
    - The status of of the build will be visible in the `Checks` section of the pull request
    - The status can also be viewed from the `Actions` tab. 
 2. Once the build completes successfully, click the `Code` tab in the repo.
@@ -90,7 +90,7 @@ This demo shows a pull request from a feature branch to `develop`, but the proce
 
 ##### Automatic Image Tagging
 
-After the pull request is merged, the `Build & Tag Image on PR` workflow will trigger the `tag_on_merge` job, which automatically tags the image created above as `latest-rc`. This image is now ready to be deployed to `next` or other pre-production environments.
+After the pull request is merged, the `Pull Request Build, Tag, & Push ` workflow will trigger the `tag_on_merge` job, which automatically tags the image created above as `latest-rc`. This image is now ready to be deployed to `next` or other pre-production environments.
 
 #### 4. Create Release
 
