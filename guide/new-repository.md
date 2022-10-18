@@ -36,6 +36,7 @@ Before using these actions, please:
 
 1. Review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md) sections.
 2. Enable the required [status checks](https://github.com/kbase/.github/blob/DEVOPS-803-DocUpdates/guide/enable-branch-rules.md#require-status-checks).
+3. File a request with the DevOps team (via Jira or Slack) to make any images built using these Actions publicly accessible (images are private by default).
 
 
 ---
