@@ -18,7 +18,7 @@
 2. Review your current repo's `.github/workflows/` directory if one currently exists.
 3. Ensure there are no files named `pr_build.yml` or `release-main.yml` in the `.github/workflows/` directory.
    - If these files aleady exist, they can't be added using the [Add Actions To Repository](https://github.com/jsfillman/kbase-build-guide/blob/main/guide/existing-repository.md#add-actions-to-repository) steps below.
-   - If these files match the current stock [pr_build.yaml](https://github.com/kbase/.github/blob/main/workflow-templates/pr_build.yaml) & [release-main.yml]([https://github.com/kbase/.github/blob/main/workflow-templates/prod_release.yaml](https://github.com/kbase/.github/blob/main/workflow-templates/release-main.yml)), these workflows are already enabled, and you can skip to the [Enable Branch Rules](enable-branch-rules.md) section.
+   - If these files match the current stock [pr_build.yaml](https://github.com/kbase/.github/blob/main/workflow-templates/pr_build.yaml) & [release-main.yml](https://github.com/kbase/.github/blob/main/workflow-templates/release-main.yml), these workflows are already enabled, and you can skip to the [Enable Branch Rules](enable-branch-rules.md) section.
 4. Review any other .yaml/.yml files in `.github/workflows/` to ensure they aren't redundant or are causing unnecessary failed builds.
 
 ### Add Actions To Repository
