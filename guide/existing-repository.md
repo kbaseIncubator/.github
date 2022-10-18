@@ -39,6 +39,9 @@ To enable the KBase build scripts on an existing [github.com/kbase](https://gith
    - `inbox`
    - Any active feature branches
 
+| ⚠️ These workflows must be merged to _all_ active branches for full functionality! |
+| :----------------------------------------------------------: |
+
 ##### Existing Repo Demo
 
 <!-- This code creates a simple dropdown -->
