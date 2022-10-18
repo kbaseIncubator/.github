@@ -32,7 +32,7 @@ The KBase Development workflow requires the following:
    - `main` or `master`
    - `develop`
    - `inbox`
-2. The `pr_build.yml` and `prod_release.yml` workflows described in the [New Repository](new-repository.md) and [Existing Repository](existing-repository.md) sections must be present in the repo.
+2. The `pr_build.yml` and `release-main.yml` workflows described in the [New Repository](new-repository.md) and [Existing Repository](existing-repository.md) sections must be present in the repo.
 3. The branch rules discussed in [Enable Branch Rules](enable-branch-rules.md) must be enabled.
 
 
@@ -210,11 +210,12 @@ After approving and merging the pull request, please delete the source branch (u
 
 ##### Automatic Image Tagging
 
-After the pull request is merged, the `Build & Tag Image on PR` workflow will trigger the `tag_on_merge` job, which automatically tags the image created above as `latest`. This image is now ready to be deployed to `CI` or other non-production environments.
+After the pull request is merged, the `Pull Request Build, Tag, & Push ` workflow will trigger the `tag_on_merge` job, which automatically tags the image created above as `latest`. This image is now ready to be deployed to `CI` or other non-production environments.
 
 | 🎬 Coming Soon - Continuous Delivery                          |
 | :----------------------------------------------------------- |
 | Once all non-production environments are migrated to Rancher 2, developers will have the option to automatically deploy the `latest` image to a development cluster when a pull request is merged! |
+
 
 ---
 **|| Previous: [Enable Branch Rules](enable-branch-rules.md) || [Home](README.md) || Next: [Release Workflow](release-workflow.md) ||**

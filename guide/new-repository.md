@@ -32,8 +32,12 @@ To create a new [github.com/kbase](https://github.com/kbase) repo and enable the
 
 ### Next Steps
 
-Before using these actions, please review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md) sections.
+Before using these actions, please:
+
+1. Review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md) sections.
+2. Enable the required [status checks](https://github.com/kbase/.github/blob/DEVOPS-803-DocUpdates/guide/enable-branch-rules.md#require-status-checks).
+3. File a request with the DevOps team (via Jira or Slack) to make any images built using these workflows [publicly accesible](https://docs.github.com/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility#configuring-access-to-container-images-for-an-organization).
 
 
-
+---
 **|| Previous: [Home](README.md) || Next: [Existing Repository](existing-repository.md) ||**
