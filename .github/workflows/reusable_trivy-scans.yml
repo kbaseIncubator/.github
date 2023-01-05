@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out GitHub Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build an image from Dockerfile
         run: |
@@ -48,4 +48,3 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: 'trivy-results.sarif'
-        
