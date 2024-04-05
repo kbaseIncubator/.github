@@ -11,6 +11,11 @@ on:
         description: The image tags
         required: true
         type: string
+      platforms:
+        description: The platforms for which the Docker image should be built. If not specified, defaults to linux/amd64.
+        required: false
+        type: string
+        default: 'linux/amd64'
 jobs:
   build-push-image:
     runs-on: ubuntu-latest
@@ -29,7 +34,6 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          # note that the calling workflow must set `secrets: inherit`
           username: '${{ secrets.GHCR_USERNAME }}'
           password: '${{ secrets.GHCR_TOKEN }}'
 
@@ -51,9 +55,9 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm64
           pull: true
           push: true
+          platforms: '${{ inputs.platforms }}'
           build-args: |
             BUILD_DATE=${{ steps.date.outputs.date }}
             VCS_REF=${{ github.sha }}
