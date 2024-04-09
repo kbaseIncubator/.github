@@ -2,12 +2,12 @@
 name: Build Image without pushing
 on:
   workflow_call:
-#    inputs:
-#      platforms:
-#        description: The platforms for which the Docker image should be built. If not specified, defaults to linux/amd64.
-#        required: false
-#        type: string
-#        default: 'linux/amd64'
+    inputs:
+      platforms:
+        description: The platforms for which the Docker image should be built. If not specified, defaults to linux/amd64.
+        required: false
+        type: string
+        default: 'linux/amd64'
 jobs:
   build-image:
     runs-on: ubuntu-latest
@@ -25,4 +25,4 @@ jobs:
           file: ./Dockerfile
           pull: true
           push: false
-#          platforms: '${{ inputs.platforms }}'
+          platforms: '${{ inputs.platforms }}'
