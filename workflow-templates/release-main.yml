@@ -6,6 +6,9 @@ on:
       - main
       - master
     types: [ published ]
+# Defaults to building for linux/amd64. Can modify be updating variable, e.g. PLATFORMS: 'linux/amd64,linux/arm64/v8'
+env:
+  PLATFORMS: ${{ github.event.inputs.platforms }}
 jobs:
   check-source-branch:
     uses: kbase/.github/.github/workflows/reusable_validate-branch.yml@multi-target
@@ -22,5 +25,5 @@ jobs:
     with:
       name: '${{ github.event.repository.name }}'
       tags: '${{ github.event.release.tag_name }},latest'
-      platforms: ${{ github.event.inputs.platforms }}
+      platforms: ${{ env.PLATFORMS }}
     secrets: inherit
