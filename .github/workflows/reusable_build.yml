@@ -2,20 +2,30 @@
 name: Build Image without pushing
 on:
   workflow_call:
+    inputs:
+      platforms:
+        description: The platforms for which the Docker image should be built. If not specified, defaults to linux/amd64.
+        required: false
+        type: string
+        default: 'linux/amd64'
 jobs:
   build-image:
     runs-on: ubuntu-latest
     steps:
       - name: Check out GitHub Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Build without push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
           pull: true
           push: false
+          platforms: '${{ inputs.platforms }}'
