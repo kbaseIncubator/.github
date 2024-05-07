@@ -9,7 +9,7 @@
 
 ### Create Repository From Template
 
-To create a new [github.com/kbase](https://github.com/kbase) repo and enable the KBase build scripts automatically, simply:
+To create a new [github.com/kbase](https://github.com/organizations/kbase/repositories/new) repo and enable the KBase build scripts automatically, simply:
 
 1. Create a new repo in the `kbase` organization.
 2. Under the `Repository template` dropdown, select `kbase-template`.
@@ -32,8 +32,12 @@ To create a new [github.com/kbase](https://github.com/kbase) repo and enable the
 
 ### Next Steps
 
-Before using these actions, please review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md) sections.
+Before using these actions, please:
+
+1. Review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md) sections.
+2. Enable the required [status checks](enable-branch-rules.md#require-status-checks).
+3. File a request with the DevOps team (via Jira or Slack) to make any resulting images [public](https://docs.github.com/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility#configuring-access-to-container-images-for-an-organization).
 
 
-
+---
 **|| Previous: [Home](README.md) || Next: [Existing Repository](existing-repository.md) ||**

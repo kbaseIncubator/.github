@@ -22,4 +22,5 @@ jobs:
     with:
       name: '${{ github.event.repository.name }}'
       tags: '${{ github.event.release.tag_name }},latest'
+      platforms: "linux/amd64"
     secrets: inherit

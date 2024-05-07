@@ -23,7 +23,7 @@ The KBase Actions (workflows) are built under the assumption that:
 
 ### Preliminary Steps
 
-1. Confirm that  `pr_build.yml` and `prod_release.yml` exist in the `.github/workflows/` directories of all active branches.
+1. Confirm that  `pr_build.yml` and `release-main.yml` exist in the `.github/workflows/` directories of all active branches.
 2. See [New Repository](new-repository.md) and [Existing Repository](existing-repository.md) for instructions on how to enable these workflows.
 
 ### Enable Branch Rules
@@ -58,6 +58,15 @@ The following steps will allow a repo owner/admin to set up the needed protectio
    - This can be safely disabled by an admin during troublehooting, but should remain enabled during normal use.
 3. Click create.
 
+#### Require status checks
+
+Once a successful Pull Request has been created, and the `pr_build.yml` workflow has completed, require the following specific status checks:
+
+- On `develop` branch rule: `build-develop-open / build-image`
+- On `main` branch rule: `build-main-open / build-push-image`
+
+<img width="1298" alt="RequiredStatusChcecks" src="https://user-images.githubusercontent.com/6155956/195523313-350f9a34-5e64-440f-8dcc-ed4e1186f315.png">
+
 ##### Branch Rules Demo
 
 <!-- This code creates a simple dropdown -->
@@ -72,8 +81,10 @@ The following steps will allow a repo owner/admin to set up the needed protectio
 
 ### Next Steps
 
-Before using these branch rules, please review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md)
+Before using these branch rules, please:
+1. Review the [Development Workflow](development-workflow.md) and [Release Workflow](release-workflow.md)
+2. File a request with the DevOps team (via Jira or Slack) to make any resulting images [public](https://docs.github.com/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility#configuring-access-to-container-images-for-an-organization).
 
 
-
+---
 **|| Previous: [Existing Repository](existing-repository.md) || [Home](README.md) || Next: [Development Workflow](development-workflow.md) ||**

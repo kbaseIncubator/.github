@@ -15,6 +15,8 @@ jobs:
   build-develop-open:
     if: github.base_ref == 'develop' && github.event.pull_request.merged == false
     uses: kbase/.github/.github/workflows/reusable_build.yml@main
+    with:
+      platforms: "linux/amd64"
     secrets: inherit
   build-develop-merge:
     if: github.base_ref == 'develop' && github.event.pull_request.merged == true
@@ -22,6 +24,7 @@ jobs:
     with:
       name: '${{ github.event.repository.name }}-develop'
       tags: pr-${{ github.event.number }},latest
+      platforms: "linux/amd64"
     secrets: inherit
   build-main-open:
     if: (github.base_ref == 'main' || github.base_ref == 'master') && github.event.pull_request.merged == false
@@ -29,6 +32,7 @@ jobs:
     with:
       name: '${{ github.event.repository.name }}'
       tags: pr-${{ github.event.number }}
+      platforms: "linux/amd64"
     secrets: inherit
   build-main-merge:
     if: (github.base_ref == 'main' || github.base_ref == 'master') && github.event.pull_request.merged == true
@@ -36,4 +40,9 @@ jobs:
     with:
       name: '${{ github.event.repository.name }}'
       tags: pr-${{ github.event.number }},latest-rc
+      platforms: "linux/amd64"
+    secrets: inherit
+  trivy-scans:
+    if: (github.base_ref == 'develop' || github.base_ref == 'main' || github.base_ref == 'master' ) && github.event.pull_request.merged == false
+    uses: kbase/.github/.github/workflows/reusable_trivy-scans.yml@main
     secrets: inherit
